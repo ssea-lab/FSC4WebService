@@ -1,0 +1,96 @@
+identification text--------Identification-Text
+translation--------Translation
+handwriting recognition--------Handwriting Recognition
+embeddings--------Embeddings
+text speech--------Text to Speech
+captioning--------Text/Captioning
+segmentation pixel labeling--------Segmentation/Pixel Labeling
+segmentation--------Segmentation
+dimensionality reduction--------Dimensionality Reduction
+speaker identification audio--------Speaker Identification-Audio
+embedding feature extraction--------Embedding/Feature Extraction
+summarization text--------Summarization-Text
+ranking--------Ranking
+human review services--------Human Review Services
+clustering structured--------Clustering-Structured
+processing text--------Edit/Processing-Text
+feature engineering--------Feature Engineering
+object detection video--------Object Detection-Video
+classification audio--------Classification-Audio
+gaming data--------Gaming Data
+clustering text--------Clustering-Text
+speech text--------Speech to Text
+processing image--------Edit/Processing-Image
+3d--------3D
+names entity recognition--------Names Entity Recognition - NER
+human faces--------Human/Faces
+ground truth--------Amazon SageMaker Ground Truth Services
+processing video--------Edit/Processing-Video
+data catalogs--------Data Catalogs
+masking tokenization--------Masking/Tokenization
+classification video--------Classification-Video
+sentiment analysis--------Sentiment Analysis
+generation text--------Generation-Text
+speech recognition--------Speech Recognition
+ocr--------Text/OCR
+smart home city--------Smart Home & City
+master data management--------Master Data Management
+data labeling services--------Data Labeling Services
+elearning--------eLearning
+audio--------Audio
+human resources--------Human Resources
+data warehouses--------Data Warehouses
+anomaly detection structured--------Anomaly Detection-Structured
+regression--------Regression
+time series forecasting--------Time-series Forecasting
+data preparation--------Data Preparation
+automotive data--------Automotive Data
+intelligent automation--------Intelligent Automation
+device management--------Device Management
+agile lifecycle management--------Agile Lifecycle Management
+industrial--------Industrial
+streaming solutions--------Streaming solutions
+training--------Training
+applications--------Applications
+extract transform load--------ELT/ETL
+object detection image--------Object Detection-Image
+manufacturing data--------Manufacturing Data
+video--------Video
+blockchain--------Blockchain
+device connectivity--------Device Connectivity
+device security--------Device Security
+industrial iot--------Industrial IoT
+analytics--------Analytics
+contact center--------Contact Center
+telecommunications data--------Telecommunications Data
+media entertainment data--------Media & Entertainment Data
+issue bug tracking--------Issue & Bug Tracking
+classification text--------Classification-Text
+education research--------Education & Research
+premium support--------Premium Support
+log analysis--------Log Analysis
+classification image--------Classification-Image
+business management--------IT Business Management
+crm--------CRM
+backup recovery--------Backup & Recovery
+data governance--------Data Governance
+source control--------Source Control
+resources data--------Resources Data
+analytic platforms--------Analytic Platforms
+infrastructure code--------Infrastructure as Code
+healthcare life sciences data--------Healthcare & Life Sciences Data
+text--------Text
+storage--------Storage
+testing--------Testing
+ecommerce--------eCommerce
+healthcare life sciences--------Healthcare & Life Sciences
+natural language processing--------Natural Language Processing
+computer vision--------Computer Vision
+continuous integration delivery--------Continuous Integration and Continuous Delivery
+managed services--------Managed Services
+data integration--------Data Integration
+financial services--------Financial Services
+image--------Image
+migration--------Migration
+project management--------Project Management
+classification structured--------Classification-Structured

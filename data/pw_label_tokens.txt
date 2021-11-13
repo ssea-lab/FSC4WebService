@@ -1,0 +1,264 @@
+check--------check-in
+adoption--------adoption
+developer relations--------developer relations
+mexican--------mexican
+north america--------north america
+transparency--------transparency
+israeli--------israeli
+beauty--------beauty
+hobbies--------hobbies
+modules--------modules
+magazines--------magazines
+attractions--------attractions
+diagrams--------diagrams
+coronavirus--------coronavirus
+pastebin--------pastebin
+celebrities--------celebrities
+wholesale--------wholesale
+postcards--------postcards
+meme--------meme
+gadgets--------gadgets
+announcements--------announcements
+open graph--------open graph
+webcams--------webcams
+refunds--------refunds
+grocery--------grocery
+prototype--------prototype
+agents--------agents
+content delivery network--------content delivery network
+newsletters--------newsletters
+competitions--------competitions
+astrology--------astrology
+alcohol--------alcohol
+dieting--------dieting
+badges--------badges
+machine machine--------machine-to-machine
+mashups--------mashups
+availability--------availability
+geology--------geology
+budget--------budget
+military--------military
+word processing--------word processing
+summary--------summary
+earthquakes--------earthquakes
+esports--------esports
+ipaas--------ipaas
+actors--------actors
+police--------police
+beer--------beer
+caching--------caching
+motion--------motion
+genealogy--------genealogy
+belgian--------belgian
+registry--------registry
+hacking--------hacking
+bluetooth--------bluetooth
+copyright--------copyright
+nosql--------nosql
+agile--------agile
+transcoding--------transcoding
+colors--------colors
+presentations--------presentations
+lyrics--------lyrics
+flowers--------flowers
+torrents--------torrents
+datacenter--------datacenter
+protocol--------protocol
+goals--------goals
+spelling--------spelling
+adult--------adult
+sql--------sql
+sdk--------sdk
+italian--------italian
+pets--------pets
+digital asset management--------digital asset management
+fashion--------fashion
+subtitles--------subtitles
+classifieds--------classifieds
+guides--------guides
+avatars--------avatars
+korean--------korean
+parking--------parking
+newsletter--------newsletter
+fonts--------fonts
+open banking--------open banking
+microservices--------microservices
+patents--------patents
+wine--------wine
+erp--------erp
+solar--------solar
+new york city--------new york city
+annotations--------annotations
+licensing--------licensing
+supply chain--------supply chain
+background--------background
+polls--------polls
+medical records--------medical records
+satellites--------satellites
+holidays--------holidays
+housing--------housing
+purchasing--------purchasing
+cameras--------cameras
+emergency--------emergency
+manufacturing--------manufacturing
+semantic web--------semantic web
+framework--------framework
+notes--------notes
+oauth--------oauth
+podcasts--------podcasts
+family--------family
+math--------math
+clothing--------clothing
+brazilian--------brazilian
+gifts--------gifts
+collecting--------collecting
+wi fi--------wi-fi
+wiki--------wiki
+plugins--------plugins
+voting--------voting
+reputation--------reputation
+teleconferencing--------teleconferencing
+training--------training
+wireless--------wireless
+ebooks--------ebooks
+meetings--------meetings
+api design--------api design
+linked data--------linked data
+smartphone--------smartphone
+scanning--------scanning
+cycling--------cycling
+syncing--------syncing
+recreation--------recreation
+water--------water
+postcodes--------postcodes
+economics--------economics
+spreadsheets--------spreadsheets
+measurements--------measurements
+passwords--------passwords
+fax--------fax
+forums--------forums
+encoding--------encoding
+asia--------asia
+viewer--------viewer
+contracts--------contracts
+robots--------robots
+auctions--------auctions
+drugs--------drugs
+parsing--------parsing
+names--------names
+tagging--------tagging
+models--------models
+countries--------countries
+captcha--------captcha
+nutrition--------nutrition
+transcription--------transcription
+backup--------backup
+upload--------upload
+animation--------animation
+bookmarks--------bookmarks
+dictionary--------dictionary
+politics--------politics
+animals--------animals
+augmented reality--------augmented reality
+tweets--------tweets
+words--------words
+privacy--------privacy
+accessibility--------accessibility
+qr codes--------qr codes
+spam--------spam
+virtualization--------virtualization
+museums--------museums
+salesforce--------salesforce
+random--------random
+humor--------humor
+crime--------crime
+dashboards--------dashboards
+rest--------rest
+russian--------russian
+zip codes--------zip codes
+reservations--------reservations
+funding--------funding
+climate--------climate
+history--------history
+planning--------planning
+webrtc--------webrtc
+sustainability--------sustainability
+q--------q&a
+french--------french
+loyalty--------loyalty
+ocr--------ocr
+registration--------registration
+marine--------marine
+html--------html5
+learning management systems--------learning management systems
+activity streams--------activity streams
+hardware--------hardware
+chinese--------chinese
+safety--------safety
+writing--------writing
+nature--------nature
+african--------african
+graphics--------graphics
+rentals--------rentals
+screenshots--------screenshots
+keywords--------keywords
+taxes--------taxes
+crowdsourcing--------crowdsourcing
+spanish--------spanish
+usa--------usa
+japanese--------japanese
+widgets--------widgets
+database service--------database-as-a-service
+comparisons--------comparisons
+feedback--------feedback
+api management--------api management
+medicine--------medicine
+algorithms--------algorithms
+discounts--------discounts
+profiles--------profiles
+infrastructure service--------infrastructure-as-a-service
+optimization--------optimization
+text speech--------text-to-speech
+home automation--------home automation
+law--------law
+performance--------performance
+rewards--------rewards
+forms--------forms
+urls--------urls
+surveys--------surveys
+support--------support
+tourism--------tourism
+canadian--------canadian
+organization--------organization
+charts--------charts
+non profit--------non-profit
+voip--------voip
+cities--------cities
+charity--------charity
+tasks--------tasks
+wearable--------wearable
+catalogs--------catalogs
+barcodes--------barcodes
+restaurants--------restaurants
+time--------time
+indian--------indian
+customization--------customization
+german--------german
+personal information management--------personal information management
+electronic signature--------electronic signature
+agriculture--------agriculture
+directories--------directories
+coupons--------coupons
+referrals--------referrals
+ratings--------ratings
+community--------community
+australian--------australian
+tickets--------tickets
+url shortener--------url shortener
+subscriptions--------subscriptions
+languages--------languages
+monetization--------monetization
+compliance--------compliance
+time tracking--------time tracking
+genetics--------genetics
+browsers--------browsers
