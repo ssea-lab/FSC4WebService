@@ -6,14 +6,21 @@ import json
 import joblib
 import numpy as np
 import os
+import argparse
 from gensim.models import Word2Vec
+
+parser = argparse.ArgumentParser(
+        description='train word2vec embeddings on the Web service dataset based on the pre-trained FastText word embeddings.'
+    )
+parser.add_argument('--dataset', required=True, help='name of the dataset. Options: [pw, aws]')
+args = parser.parse_args()
+dataset = args.dataset
+assert dataset in ['pw', 'aws']
 
 DATA_ROOT = './data/'
 CACHE_ROOT = './cache/'
 PRE_TRAIN_MODEL_NAME="wiki.en.vec"
 EMB_DIM = 300
-dataset = 'pw' # ['pw', 'aws']
-assert dataset in ['pw', 'aws']
 MODEL_NAME = '%s_word2vec.txt' %dataset
 
 # clear cache
