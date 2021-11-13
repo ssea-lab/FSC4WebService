@@ -20,3 +20,11 @@ The code is partially referred to https://github.com/YujiaBao/Distributional-Sig
  
 You can use the python package manager of your choice (*pip/conda*) to install the dependencies.
 The code is tested on the *Linux* operating system.
+
+## Usage
+
+1. Download FASTTEXT pre-trained word embeddings from [here](https://dl.fbaipublicfiles.com/fasttext/vectors-wiki/wiki.en.vec). Then put it into the directory **cache**.
+2. Train **word2vec** embeddings on the Web service dataset based on the pre-trained FastText word embeddings
+```
+python w2v.py --dataset=[pw/aws]
+```
