@@ -19,10 +19,10 @@ def get_embedding(vocab, args):
     if args.bert:
         ebd = CXTEBD(args.pretrained_bert,
                      cache_dir=args.bert_cache_dir,
-                     finetune_ebd=args.finetune_ebd,
+                     finetune_ebd=False,
                      return_seq=(args.embedding!='ebd'))
     else:
-        ebd = WORDEBD(vocab, args.finetune_ebd)
+        ebd = WORDEBD(vocab, False)
 
     if args.embedding == 'avg':
         model = AVG(ebd, args)

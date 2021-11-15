@@ -13,7 +13,7 @@ from nltk.corpus import stopwords
 
 
 DATA_ROOT = './data/'
-DATASETS =['pw','aws']    
+DATASETS =['pw']    
 MIN_COUNT = 6
     
 stop_words = set(stopwords.words('english'))
@@ -91,9 +91,7 @@ for dataset in DATASETS:
     test_count = 0
     test_label_count = 0
     train_label_count = 0
-    index = 0
     index2label = {}
-    global_index = 0
     label_word_tokens = []
     iterators = None
     if dataset == 'pw':
@@ -140,11 +138,12 @@ for dataset in DATASETS:
                 test_indices.update(v)
         iterators = label_id
     print('Label count: {}'.format(len(label_list)))
+    
+    label = 0
     for k,v in sorted(iterators.items(), key=lambda x: len(x[1])):
-        label = index
         label_tokens = my_tokenize(k)
         label_word_tokens.append(' '.join(label_tokens) + '--------' + k)
-        index2label[index] = label_tokens   
+        index2label[label] = label_tokens   
         if len(v) <= MAX_COUNT_TEST:
             test_count += len(v)
             test_label_count += 1
@@ -162,12 +161,8 @@ for dataset in DATASETS:
                 tmp['text'] = text
                 tmp['label'] = label
                 tmp['raw'] = line.Description
-                tmp['global_index'] = global_index
                 if len(text) > 0:
                     res.append(tmp)
-                    flag = True
-                if flag:
-                    global_index += 1
         else:
             for id in v:
                 item = id_item[id]
@@ -178,14 +173,9 @@ for dataset in DATASETS:
                 tmp['text'] = text
                 tmp['label'] = label
                 tmp['raw'] = item['ShortDescription']
-                tmp['global_index'] = global_index
-                tmp['is_aug'] = False
                 if len(text) > 0:
                     res.append(tmp)
-                    flag = True
-                if flag:
-                    global_index += 1
-        index += 1
+        label += 1
 
     print('common label count between train and test dataset: %d'%len(train_indices&test_indices))
     print('test label count: {}'.format(test_label_count))

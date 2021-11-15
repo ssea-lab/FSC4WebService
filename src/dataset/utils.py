@@ -36,9 +36,7 @@ def to_tensor(data, cuda, exclude_keys=[]):
     return data
 
 
-index2vector = joblib.load('data/index2vector.pkl')
-
-def select_subset(old_data, new_data, keys, idx, max_len=None, add_label_vector=False):
+def select_subset(old_data, new_data, keys, idx, index2vector, max_len=None, add_label_vector=False):
     '''
         modifies new_data
 

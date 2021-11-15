@@ -12,7 +12,7 @@ from gensim.models import Word2Vec
 parser = argparse.ArgumentParser(
         description='train word2vec embeddings on the Web service dataset based on the pre-trained FastText word embeddings.'
     )
-parser.add_argument('--dataset', required=True, help='name of the dataset. Options: [pw, aws]')
+parser.add_argument('--dataset', default='pw', type=str, required=False, help='name of the dataset. Options: [pw, aws]')
 args = parser.parse_args()
 dataset = args.dataset
 assert dataset in ['pw', 'aws']

@@ -64,7 +64,7 @@ def parse_args():
     # model options
     parser.add_argument("--embedding", type=str, default="avg",
                         help=("document embedding method. Options: "
-                              "[avg, idf, iwf, meta, cnn]"))
+                              "[avg, idf, iwf, meta, cnn, lstmatt]"))
     parser.add_argument("--classifier", type=str, default="nn",
                         help=("classifier. Options: [nn, proto, r2d2, mlp, gnn]"))
 
@@ -165,6 +165,9 @@ def parse_args():
     parser.add_argument("--iatt", action="store_true", default=False,
                         help="use instance attention for prototype net")
     
+    parser.add_argument("--index2vector_path", type=str,
+                        help="path to index2vector file")
+    
     return parser.parse_args()
 
 
@@ -187,8 +190,6 @@ def print_args(args):
         if args.classifier != "mlp" and attr[:4] == "mlp_":
             continue
         if args.classifier != "proto" and attr[:6] == "proto_":
-            continue
-        if "pos" not in args.auxiliary and attr[:4] == "pos_":
             continue
         if not args.maml and attr[:5] == "maml_":
             continue

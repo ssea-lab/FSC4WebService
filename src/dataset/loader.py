@@ -44,7 +44,6 @@ def _load_json(path):
 
             item = {
                 'label': int(row['label']),
-                'global_index': row['global_index'],
                 'text': row['text'][:500]  # truncate the text to 500 tokens
             }
             text_len.append(len(row['text']))
@@ -128,7 +127,6 @@ def _data_to_nparray(data, vocab, args):
         Convert the data into a dictionary of np arrays for speed.
     '''
     doc_label = np.array([x['label'] for x in data], dtype=np.int64)
-    global_index = np.array([x['global_index'] for x in data], dtype=np.int64)
     raw = np.array([e['text'] for e in data], dtype=object)
 
     if args.bert:
@@ -182,9 +180,9 @@ def _data_to_nparray(data, vocab, args):
 
         vocab_size = vocab.vectors.size()[0]
 
-    tmp = [text_len, text, doc_label, raw, global_index]
+    tmp = [text_len, text, doc_label, raw]
     deled_columns = _del_by_idx(tmp, del_idx, 0)
-    text_len, text, doc_label, raw, global_index, is_aug= deled_columns[:len(tmp)]
+    text_len, text, doc_label, raw= deled_columns[:len(tmp)]
 
     new_data = {
         'text': text,
@@ -192,8 +190,6 @@ def _data_to_nparray(data, vocab, args):
         'label': doc_label,
         'raw': raw,
         'vocab_size': vocab_size,
-        'global_index':global_index,
-        'is_aug':is_aug
     }
 
     return new_data

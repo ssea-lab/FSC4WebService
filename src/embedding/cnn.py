@@ -5,7 +5,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 from embedding.wordebd import WORDEBD
-from embedding.auxiliary.factory import get_embedding
 from collections import OrderedDict
 
 
@@ -19,7 +18,6 @@ class CNN(nn.Module):
         self.args = args
 
         self.ebd = ebd
-        self.aux = get_embedding(args)
 
         self.input_dim = self.ebd.embedding_dim + self.aux.embedding_dim
 
@@ -80,31 +78,17 @@ class CNN(nn.Module):
         # Apply the word embedding, result:  batch_size, doc_len, embedding_dim
         ebd = self.ebd(data, weights)
 
-        # add augmented embedding if applicable
-        aux = self.aux(data, weights)
-
-        ebd = torch.cat([ebd, aux], dim=2)
-
         # apply 1d conv + max pool, result:  batch_size, num_filters_total
         if weights is None:
             ebd = self._conv_max_pool(ebd, conv_filter=self.convs)
         else:
             ebd = self._conv_max_pool(ebd, weights=weights)
 
-        # update max scores
-        if self.args.mode == 'visualize':
-            for i, s in enumerate(self.compute_score(data)):
-                self.scores[i].append(torch.max(s).item())
-
         return ebd
 
     def compute_score(self, data, normalize=False):
         # preparing the input
-        ebd = self.ebd(data)
-        aux = self.aux(data)
-        # (batch_size, doc_len, input_dim)
-        x = torch.cat([ebd, aux], dim=-1).detach()
-
+        x = self.ebd(data)
         # (out_channels, in_channels, kernel_size)
         w = [c.weight.data for c in self.convs]
         # (kernel_size, out_channels, in_channels)

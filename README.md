@@ -28,3 +28,7 @@ The code is tested on the *Linux* operating system.
 ```
 python w2v.py --dataset=[pw/aws]
 ```
+3. Modify run.sh and run it.
+```
+bash run.sh
+```

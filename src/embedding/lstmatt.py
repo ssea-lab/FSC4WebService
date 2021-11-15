@@ -4,7 +4,6 @@ import torch.nn.functional as F
 from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence
 
 from embedding.meta import RNN
-from embedding.auxiliary.factory import get_embedding
 
 
 class LSTMAtt(nn.Module):
@@ -14,7 +13,6 @@ class LSTMAtt(nn.Module):
         self.args = args
 
         self.ebd = ebd
-        self.aux = get_embedding(args)
 
         self.input_dim = self.ebd.embedding_dim + self.aux.embedding_dim
 
@@ -63,12 +61,6 @@ class LSTMAtt(nn.Module):
 
         # Apply the word embedding, result:  batch_size, doc_len, embedding_dim
         ebd = self.ebd(data)
-
-        # add augmented embedding if applicable
-        aux = self.aux(data)
-
-        ebd = torch.cat([ebd, aux], dim=2)
-        
         
 
         # result: batch_size, max_text_len, embedding_dim

@@ -11,12 +11,7 @@ from termcolor import colored
 
 from dataset.parallel_sampler import ParallelSampler
 from train.utils import named_grad_param, grad_param, get_norm
-from train.fgm import FGM
-from train.ici import ICI
 import joblib
-from train.vis import createHTML
-import matplotlib.pyplot as plt
-from sklearn.decomposition import PCA
 
 def train(train_data, val_data, model, args):
     '''
@@ -257,10 +252,6 @@ def test(test_data, model, args, num_episodes,  return_score=False, vocab=None, 
     return np.mean(acc1s), np.std(acc1s)
 
 html_index = 0
-
-
-
-index2label = joblib.load('index2label.pkl')
 
 def test_one(task, model, args, return_score=False, vocab=None):
     '''

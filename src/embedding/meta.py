@@ -4,7 +4,6 @@ import torch.nn.functional as F
 from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence
 
 from embedding.wordebd import WORDEBD
-from embedding.auxiliary.factory import get_embedding
 
 class RNN(nn.Module):
     def __init__(self, input_dim, hidden_dim, num_layers, bidirectional,
@@ -98,19 +97,11 @@ class META(nn.Module):
         self.args = args
 
         self.ebd = ebd
-        self.aux = get_embedding(args)
 
         self.ebd_dim = self.ebd.embedding_dim
 
-        self.add_ebds = nn.ModuleList([nn.Embedding(d,8) for d in add_key_counts])
-        a = 1e-3
-        for add_ebd,d in zip(self.add_ebds,add_key_counts):
-            add_ebd.weight = nn.Parameter(torch.FloatTensor(d, 8).uniform_(-a, a))
-        # self.auth_ebd = nn.Embedding(129, 16)
-        # a = 1e-2
-        # self.auth_ebd.weight = nn.Parameter(torch.FloatTensor(129, 10).uniform_(-a, a))
 
-        input_dim = int(args.meta_idf) + self.aux.embedding_dim + \
+        input_dim = int(args.meta_idf) +  \
             int(args.meta_w_target) + int(args.meta_iwf) + int(args.meta_task_idf) + int(args.meta_label_sim)
  
         if args.meta_ebd:
@@ -289,7 +280,9 @@ class META(nn.Module):
         '''
 
         # preparing the input for the meta model
-        x = self.aux(data)
+        x = torch.FloatTensor()
+        if self.args.cuda != -1:
+            x = x.cuda(self.args.cuda)
         if self.args.meta_idf:
             idf = F.embedding(data['text'], data['idf']).detach()
             x = torch.cat([x, idf], dim=-1)

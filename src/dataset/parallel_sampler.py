@@ -2,6 +2,7 @@ import time
 from multiprocessing import Process, Queue, cpu_count
 
 import numpy as np
+import joblib
 
 import dataset.utils as utils
 import dataset.stats as stats
@@ -15,6 +16,7 @@ class ParallelSampler():
 
         self.all_classes = np.unique(self.data['label'])
         self.num_classes = len(self.all_classes)
+        self.index2vector = joblib.load(args.index2vector_path)
         if self.num_classes < self.args.way:
             raise ValueError("Total number of classes is less than #way.")
 
@@ -99,9 +101,9 @@ class ParallelSampler():
             max_query_len = np.max(self.data['text_len'][query_idx])
 
             support = utils.select_subset(self.data, {}, ['text', 'text_len', 'label'],
-                                     support_idx, max_support_len)
+                                     support_idx, self.index2vector, max_support_len)
             query = utils.select_subset(self.data, {}, ['text', 'text_len', 'label'],
-                                   query_idx, max_query_len)
+                                   query_idx, self.index2vector, max_query_len)
 
             if self.args.embedding in ['idf', 'meta', 'meta_mlp']:
                 # compute inverse document frequency over the meta-train set
