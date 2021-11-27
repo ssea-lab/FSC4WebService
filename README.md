@@ -1,6 +1,6 @@
 # Few-shot Classification for Web Service
 
-This repository contains the source code and datasets for our FGCS papaer: *Multi-Information Fusion Based Few-shot Web Service Classification*
+This repository contains the source code and datasets for our FGCS paper: *Multi-Information Fusion Based Few-shot Web Service Classification*
 
 The code is partially referred to https://github.com/YujiaBao/Distributional-Signatures
 
