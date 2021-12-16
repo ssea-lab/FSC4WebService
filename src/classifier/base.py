@@ -70,17 +70,17 @@ class BASE(nn.Module):
         unique1, inv_S = torch.unique(YS, sorted=True, return_inverse=True)
         unique2, inv_Q = torch.unique(YQ, sorted=True, return_inverse=True)
 
-        if len(unique1) != len(unique2):
-            raise ValueError(
-                'Support set classes are different from the query set')
+        # if len(unique1) != len(unique2):
+        #     raise ValueError(
+        #         'Support set classes are different from the query set')
 
-        if len(unique1) != self.args.way:
-            raise ValueError(
-                'Support set classes are different from the number of ways')
+        # if len(unique1) != self.args.way:
+        #     raise ValueError(
+        #         'Support set classes are different from the number of ways')
 
-        if int(torch.sum(unique1 - unique2).item()) != 0:
-            raise ValueError(
-                'Support set classes are different from the query set classes')
+        # if int(torch.sum(unique1 - unique2).item()) != 0:
+        #     raise ValueError(
+        #         'Support set classes are different from the query set classes')
 
         Y_new = torch.arange(start=0, end=self.args.way, dtype=unique1.dtype,
                 device=unique1.device)

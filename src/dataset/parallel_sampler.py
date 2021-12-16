@@ -95,6 +95,26 @@ class ParallelSampler():
 
             support_idx = np.concatenate(support_idx)
             query_idx = np.concatenate(query_idx)
+            
+            # filter multi-label samples
+            new_support_idx, new_query_idx = [], []
+            dd = set()
+            for idx in support_idx:
+                if self.data['index'][idx] in dd:
+                    continue
+                dd.add(self.data['index'][idx])
+                new_support_idx.append(idx)
+            if len(new_support_idx) != len(support_idx):
+                continue
+                
+            for idx in query_idx:
+                if self.data['index'][idx] in dd:
+                    continue
+                dd.add(self.data['index'][idx])
+                new_query_idx.append(idx)
+            
+            support_idx = np.array(new_support_idx)
+            query_idx = np.array(new_query_idx)
 
             # aggregate examples
             max_support_len = np.max(self.data['text_len'][support_idx])

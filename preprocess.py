@@ -13,7 +13,7 @@ from nltk.corpus import stopwords
 
 
 DATA_ROOT = './data/'
-DATASETS =['pw']    
+DATASETS =['pw','aws']    
 MIN_COUNT = 6
     
 stop_words = set(stopwords.words('english'))
@@ -140,6 +140,7 @@ for dataset in DATASETS:
     print('Label count: {}'.format(len(label_list)))
     
     label = 0
+    des2labels = {}
     for k,v in sorted(iterators.items(), key=lambda x: len(x[1])):
         label_tokens = my_tokenize(k)
         label_word_tokens.append(' '.join(label_tokens) + '--------' + k)
@@ -161,6 +162,10 @@ for dataset in DATASETS:
                 tmp['text'] = text
                 tmp['label'] = label
                 tmp['raw'] = line.Description
+                tmp['index'] = desc_index
+                if line.Description not in des2labels:
+                    des2labels[line.Description] = set()
+                des2labels[line.Description].add(label)
                 if len(text) > 0:
                     res.append(tmp)
         else:
@@ -173,10 +178,17 @@ for dataset in DATASETS:
                 tmp['text'] = text
                 tmp['label'] = label
                 tmp['raw'] = item['ShortDescription']
+                tmp['index'] = id
+                if item['ShortDescription'] not in des2labels:
+                    des2labels[item['ShortDescription']] = set()
+                des2labels[item['ShortDescription']].add(label)
                 if len(text) > 0:
                     res.append(tmp)
         label += 1
 
+    for tmp in res:
+        tmp['labels'] = list(des2labels[tmp['raw']])
+    
     print('common label count between train and test dataset: %d'%len(train_indices&test_indices))
     print('test label count: {}'.format(test_label_count))
     print('train label count: {}'.format(train_label_count))

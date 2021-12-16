@@ -44,6 +44,7 @@ def _load_json(path):
 
             item = {
                 'label': int(row['label']),
+                'index': int(row['index']),
                 'text': row['text'][:500]  # truncate the text to 500 tokens
             }
             text_len.append(len(row['text']))
@@ -128,6 +129,7 @@ def _data_to_nparray(data, vocab, args):
     '''
     doc_label = np.array([x['label'] for x in data], dtype=np.int64)
     raw = np.array([e['text'] for e in data], dtype=object)
+    doc_index = np.array([x['index'] for x in data], dtype=np.int64)
 
     if args.bert:
         tokenizer = BertTokenizer.from_pretrained(
@@ -190,6 +192,7 @@ def _data_to_nparray(data, vocab, args):
         'label': doc_label,
         'raw': raw,
         'vocab_size': vocab_size,
+        'index': doc_index
     }
 
     return new_data
